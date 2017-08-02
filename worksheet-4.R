@@ -1,4 +1,16 @@
-## Tidy data concept
+response <- data.frame(
+  trial = 1:3,
+  treatment = c(0.22, 0.58, 0.31),
+  control = c(0.42, 0.19, 0.40))
+## Tidy data concept --> what about this is not tidy? And how would we make it tidy?
+library(tidyr)
+df<-gather(response,key = "factor", value = "response", -trial)
+df 
+
+counts<-data.frame(site = rep(1:3, each +2),
+                   species = rep(c('lynx', 'hare'),3),
+                   
+animals.csv
 
 response <- data.frame(
   trial = 1:3,
@@ -43,17 +55,15 @@ dbDisconnect(...)
 ## Subsetting and sorting
 
 library(dplyr)
-animals_1990_winter <- filter(...,
-                              ...,
-                              ...)
 
 animals_1990_winter <- select(animals_1990_winter, ...)
 
-sorted <- ...(animals_1990_winter,
-              ...)
+head(sorted)
+View(sorted)
 
 ## Exercise 2
 
+str(id, sex, weight)
 ...
 
 ## Chainning with pipes
@@ -74,7 +84,9 @@ weight_1990_winter <- animals_1990_winter %>%
     summarize(avg_weight = mean(...))
 
 ## Exercise 3
-
+    consumer <-read.csv(file="data/consumer1.csv", header = TRUE, na.strings = NA)
+    
+#/Users/riannamurray/Google Drive/CONSERVE
 ...
 
 ## Transformation of variables

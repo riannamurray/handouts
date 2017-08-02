@@ -1,13 +1,14 @@
 ## The Editor
 
-vals <- ...
+vals <- seq(1, 100)
 
-vals <- seq(...,
-            ...)
 
 ## Vectors
 
-counts ...
+counts <-c(4, 6 , 8 ,2)
+
+
+
 
 ## Exercise 1
 
@@ -32,7 +33,7 @@ education <- ...(c("college", "highschool", "college", "middle"),
 
 ## Load data into R
 
-plots <- ...(...)
+plots <- read.csv("../data/plots.csv")str(plots)
 animals <- ...(...)
 
 ## Exercise 3
@@ -93,3 +94,9 @@ animals$species_id <- ...
 fit <- lm(
   log(weight) ~ ...,
   data = animals)
+
+
+species <- factor(c("dog", "cat", "monkey","human"))
+abund <-c(20,21,24,29)
+df2<-data.frame(species,abund)
+data<- data.frame(species,abund)

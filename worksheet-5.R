@@ -23,14 +23,19 @@ ggplot(data = animals,
              ...)
 
 ggplot(data = animals,
-       aes(x = species_id, y = weight, ...)) +
+       aes(x = species_id, y = weight, color=species_id)) +
   geom_boxplot() +
   geom_point(stat = 'summary',
              fun.y = 'mean')
 
 ## Exercise 1
 
-...
+str(animals)
+animals_dm <-filter(animals,species_id == "DM")
+ggplot(data = animals_dm,
+       +        aes(x = year, y = weight, color=sex)) +
+  +   geom_line(stat='summary') 
+                 +              fun.y = 'mean')
 
 ## Adding a regression line
 
@@ -50,7 +55,8 @@ ggplot(data = animals_dm,
              size = 3,
              stat = 'summary',
              fun.y = 'mean') +
-  geom_smooth(...)
+  geom_smooth(method='lm')
+  geom_smooth(aes(group=sex), method="lm")
 
 ggplot(data = animals_dm,
        aes(...,
@@ -78,7 +84,7 @@ year_wgt +
   ...
                      
 year_wgt <- year_wgt +
-  scale_color_manual(...)
+  scale_color_manual(values=c)
 year_wgt
 
 ## Exercise 2
@@ -139,6 +145,12 @@ ggplot(data = animals_common,
   guides(fill = FALSE)		
 
 ## Exercise 3
+
+ggplot (data=animals_common, aes(x=weight, fill=species_id:sex))+ 
+  geom_histogram(aes(y=..density..))+
+  facet_grid(sex~species_id)
+
+
 
 ...
 
